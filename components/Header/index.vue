@@ -1,5 +1,5 @@
 <template>
-    <header class="flex justify-between bg-black px-20 py-10">
+    <header class="flex justify-between bg-black px-20 py-10 font-normal">
         <div>
             <a href="/"><img :src="LogoImg" alt="dept logo image"></a>
         </div>
