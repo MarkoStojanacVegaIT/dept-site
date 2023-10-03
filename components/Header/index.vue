@@ -1,28 +1,28 @@
 <template>
     <header class="flex justify-between bg-black px-20 py-10 font-normal">
         <div>
-            <a href="/"><img :src="LogoImg" alt="dept logo image"></a>
+            <NuxtLink to="/"><img :src="LogoImg" alt="dept logo image"></NuxtLink>
         </div>
 
         <nav>
             <ul class="flex uppercase text-white">
-                <li class="px-6">
-                    <a href="javascript:;">Work</a>
+                <li class="px-6 group">
+                    <NuxtLink to="/work" class="group-hover:underline">Work</NuxtLink>
                 </li>
-                <li class="px-6">
-                    <a href="javascript:;">Culture</a>
+                <li class="px-6 group">
+                    <NuxtLink to="/culture" class="group-hover:underline">Culture</NuxtLink>
                 </li>
-                <li class="px-6">
-                    <a href="javascript:;">Services</a>
+                <li class="px-6 group">
+                    <NuxtLink to="/services" class="group-hover:underline">Services</NuxtLink>
                 </li>
-                <li class="px-6">
-                    <a href="javascript:;">Insights</a>
+                <li class="px-6 group">
+                    <NuxtLink to="/insights" class="group-hover:underline">Insights</NuxtLink>
                 </li>
-                <li class="px-6">
-                    <a href="javascript:;">Careers</a>
+                <li class="px-6 group">
+                    <NuxtLink to="/careers" class="group-hover:underline">Careers</NuxtLink>
                 </li>
-                <li class="px-6">
-                    <a href="javascript:;">Contact</a>
+                <li class="px-6 group">
+                    <NuxtLink to="/contact" class="group-hover:underline">Contact</NuxtLink>
                 </li>
             </ul>
         </nav>
