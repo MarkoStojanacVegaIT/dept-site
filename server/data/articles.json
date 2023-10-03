@@ -1,5 +1,62 @@
-[{
-   "id": 1,
-   "category": "bol.com",
-   "title": "A Summer island in the Netherlands"
-}]
+[
+   {
+      "id": 1,
+      "category": "bol.com",
+      "title": "A Summer island in the Netherlands",
+      "imgUrl": "/_nuxt/assets/images/img-1.png"
+   },
+   {
+      "id": 2,
+      "category": "Kempen",
+      "title": "Not some average banking website",
+      "imgUrl": "/_nuxt/assets/images/img-2.png"
+   },
+   {
+      "id": 3,
+      "category": "Philips",
+      "title": "A Summer island in the Netherlands",
+      "imgUrl": "/_nuxt/assets/images/img-3.png"
+   },
+   {
+      "id": 4,
+      "category": "GEMEENTEMUSEUM",
+      "title": "A Summer island in the Netherlands",
+      "imgUrl": "/_nuxt/assets/images/img-4.png"
+   },
+   {
+      "id": 5,
+      "category": "CHOCOMEL",
+      "title": "A campaign for the limited edition letter packs",
+      "imgUrl": "/_nuxt/assets/images/img-7.png"
+   },
+   {
+      "id": 6,
+      "category": "Jbl",
+      "title": "Live like a champion with Jerome Boateng",
+      "imgUrl": "/_nuxt/assets/images/img-8.png"
+   },
+   {
+      "id": 7,
+      "category": "Zalando",
+      "title": "Innovative SEO and content strategy for Zalando",
+      "imgUrl": "/_nuxt/assets/images/img-9.png"
+   },
+   {
+      "id": 8,
+      "category": "KONINKLIJKE BIBLIOTHEEK",
+      "title": "The search of the most influential book ever",
+      "imgUrl": "/_nuxt/assets/images/img-10.png"
+   },
+   {
+      "id": 9,
+      "category": "Liberty global",
+      "title": "Delivering complex commerce solutions",
+      "imgUrl": "/_nuxt/assets/images/img-11.png"
+   },
+   {
+      "id": 10,
+      "category": "Arla",
+      "title": "Swipe to find your next holiday destination",
+      "imgUrl": "/_nuxt/assets/images/img-12.png"
+   }
+]

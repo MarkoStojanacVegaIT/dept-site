@@ -1,3 +1,7 @@
+<script setup>
+import BackgroundImage from '@/assets/images/banner-image.jpg'
+</script>
+
 <template>
     <div :style="`background-image: url('${BackgroundImage}')`" class="relative h-[70vh] bg-cover  bg-center">
         <div class="container mx-auto">
@@ -11,10 +15,3 @@
     </div>
 </template>
 
-<script setup>
-import BackgroundImage from '@/assets/images/banner-image.jpg'
-</script>
-
-<style lang="scss" scoped>
-
-</style>
