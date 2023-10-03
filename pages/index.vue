@@ -1,7 +1,11 @@
 <script setup>
+  //Fetch data
   const { data: articles } = await useFetch('/api/articles', {
     transform: (data) => data.data
   })
+  //Set central state
+  const articlesStore = useArticlesStore()
+  articlesStore.addArticles(articles)
 </script>
 
 <template>

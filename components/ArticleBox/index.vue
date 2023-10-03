@@ -1,6 +1,4 @@
 <script setup>
-    import BackgroundImage from '@/assets/images/banner-image.jpg'
-
     const props = defineProps(['spanRange', "article"])
     const {id, category, title, imgUrl} = props.article;
 
@@ -12,7 +10,6 @@
         }
         return classes[props.spanRange]
     }
-
 </script>
 
 <template>
@@ -23,7 +20,7 @@
                 <h2 class="text-[48px] leading-[48px] mb-[20px]">
                    {{ title }}
                 </h2>
-                <NuxtLink :to="`/${id}`" class="text-base">Read more</NuxtLink>
+                <NuxtLink :to="`/work/${id}`" class="text-base hover:underline">Read more</NuxtLink>
             </div>
         </div>
     </div>
