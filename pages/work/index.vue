@@ -1,6 +1,6 @@
 <script setup>
 import { storeToRefs } from "pinia";
-import { useArticlesStore } from "../../stores/articlesStore";
+import { useArticlesStore } from "@/stores/articlesStore";
 import { SORT_ORDER } from "@/consts";
 
 //Use articles central state
@@ -22,6 +22,7 @@ const sortArticles = (articles, order) => {
     }
     return 0;
   });
+
   switch (order.toLowerCase()) {
     case SORT_ORDER.ASC:
       return sortedAscending;
