@@ -45,5 +45,7 @@
           <ArticleBox v-if="index >= 8" :article="article" :key="article.id"/>
         </div>
       </ColumnWrapper>
+
+      <ContactForm />
   </div>
 </template>
