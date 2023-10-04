@@ -16,14 +16,14 @@ const printSpanRangeClass = () => {
 
 <template>
   <div
-    :style="`background-image: url('${imgUrl}')`"
+    :style="`background-image: url('${imgUrl}')` "
     class="relative h-[70vh] bg-cover bg-center after:absolute after:w-full after:h-full after:inset-y-0 after:bg-black/40"
     :class="printSpanRangeClass()"
   >
     <div class="p-[30px]">
       <div class="absolute text-white bottom-[30px] z-10">
-        <span class="text-base block mb-[30px] uppercase">{{ category }}</span>
-        <h2 class="text-[48px] leading-[48px] mb-[20px]">
+        <span class="text-base block mb-[30px] uppercase" data-test="category">{{ category }}</span>
+        <h2 class="text-[48px] leading-[48px] mb-[20px]" data-test="title">
           {{ title }}
         </h2>
         <NuxtLink :to="`/work/${id}`" class="text-base hover:underline"

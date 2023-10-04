@@ -7,5 +7,9 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", '@nuxtjs/google-fonts', ['@pinia/nuxt', {autoImports: ['defineStore, acceptHMRUpdate']}]],
   imports: {
     dirs: ['stores']
+  },
+  tailwindcss: {
+    cssPath: '~/tailwind.css',
+    injectPosition: 'last',
   }
 })
