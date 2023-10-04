@@ -1,4 +1,5 @@
 <script setup>
+import { ERROR_MESSAGES, EMAIL_REGEX } from "@/consts";
 const formData = ref({
   name: "",
   email: "",
@@ -20,43 +21,39 @@ const validationErrors = ref({
 });
 
 const validateForm = () => {
-  //Required validation
-  Object.keys(formData.value).forEach((key) => {
+  //Required validation0
+  let requiredValid = true;
+  let formatValid = true;
+  Object.keys(formData.value).some((key) => {
     if (!formData.value[key].length) {
       validationErrors.value[key].error = true;
-      validationErrors.value[key].messages.push("This field is required!");
+      validationErrors.value[key].messages.push(ERROR_MESSAGES.REQUIRED);
+      requiredValid = false;
     } else {
       validationErrors.value[key].error = false;
       validationErrors.value[key].messages = [];
     }
   });
   //Format validation
-  if (
-    !formData.value.email.match(
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    )
-  ) {
+  if (!formData.value.email.match(EMAIL_REGEX)) {
     validationErrors.value.email.error = true;
-    validationErrors.value.email.messages.push("Incorrect email format!");
+    validationErrors.value.email.messages.push(ERROR_MESSAGES.FORMAT);
+    formatValid = false;
   } else {
     validationErrors.value.email.error = false;
     validationErrors.value.email.messages = [];
   }
+  return requiredValid && formatValid;
 };
 
 const loading = ref(false);
-const handleSubmitForm = () => {
-  validateForm();
-  loading.value = true;
-  fetch("http://localhost:3004/data", {
-    method: "POST",
-    body: JSON.stringify(formData.value),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((res) => (loading.value = false))
-    .catch((e) => (loading.value = false));
+const handleSubmitForm = async () => {
+  const isValid = validateForm();
+  if (isValid) {
+    loading.value = true;
+    await usePostContact(formData.value);
+    loading.value = false;
+  }
 };
 </script>
 
@@ -116,7 +113,7 @@ const handleSubmitForm = () => {
         class="uppercase px-[50px] py-[10px] border-2 border-black rounded-full hover:bg-slate-100"
         @click.prevent="handleSubmitForm"
       >
-        {{ loading ? 'Sending...' : 'Send'}}
+        {{ loading ? "Sending..." : "Send" }}
       </button>
     </form>
   </div>

@@ -1,6 +1,4 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
     <section class="bg-black py-[80px] text-white text-center">

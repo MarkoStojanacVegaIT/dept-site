@@ -1,6 +1,7 @@
 <script setup>
 import { storeToRefs } from "pinia";
 import { useArticlesStore } from "../../stores/articlesStore";
+import { SORT_ORDER } from "@/consts";
 
 //Use articles central state
 const articlesStore = useArticlesStore();
@@ -22,9 +23,9 @@ const sortArticles = (articles, order) => {
     return 0;
   });
   switch (order.toLowerCase()) {
-    case "ascending":
+    case SORT_ORDER.ASC:
       return sortedAscending;
-    case "descending":
+    case SORT_ORDER.DESC:
       return sortedAscending.reverse();
     default:
       return articles;
@@ -47,53 +48,53 @@ const filteredArticles = computed(() => {
 </script>
 
 <template>
-    <div>
-        <div class="bg-black py-[50px]">
-          <div class="container mx-auto">
-            <h1 class="text-white mb-[10px] uppercase">Filter by:</h1>
-            <input
-              class="w-[30%] p-[10px] rounded mr-[20px] placeholder:text-black"
-              v-model="searchText"
-              placeholder="Title"
-              type="text"
-            />
-            <select
-              class="w-[30%] p-[10px] rounded mr-[20px]"
-              v-model="selectedCategory"
-              placeholder="Category"
-              name="category"
-              id="category"
-            >
-              <option value="">Category</option>
-              <option
-                v-for="article in articles"
-                :value="article.category"
-                :key="article.key"
-              >
-                {{ article.category }}
-              </option>
-            </select>
-            <select
-              class="w-[30%] p-[10px] rounded"
-              v-model="sortOrder"
-              placeholder="Category"
-              name="category"
-              id="category"
-            >
-              <option value="">Sort order</option>
-              <option value="ascending">Ascending</option>
-              <option value="descending">Descending</option>
-            </select>
-          </div>
-        </div>
-        <ColumnWrapper numOfColumns="2">
-          <div v-for="article in filteredArticles">
-            <ArticleBox
-              v-if="filteredArticles"
-              :article="article"
-              :key="article.id"
-            />
-          </div>
-        </ColumnWrapper>
+  <div>
+    <div class="bg-black py-[50px]">
+      <div class="container mx-auto">
+        <h1 class="text-white mb-[10px] uppercase">Filter by:</h1>
+        <input
+          class="w-[30%] p-[10px] rounded mr-[20px] placeholder:text-black"
+          v-model="searchText"
+          placeholder="Title"
+          type="text"
+        />
+        <select
+          class="w-[30%] p-[10px] rounded mr-[20px]"
+          v-model="selectedCategory"
+          placeholder="Category"
+          name="category"
+          id="category"
+        >
+          <option value="">Category</option>
+          <option
+            v-for="article in articles"
+            :value="article.category"
+            :key="article.key"
+          >
+            {{ article.category }}
+          </option>
+        </select>
+        <select
+          class="w-[30%] p-[10px] rounded"
+          v-model="sortOrder"
+          placeholder="Category"
+          name="category"
+          id="category"
+        >
+          <option value="">Sort order</option>
+          <option value="ascending">Ascending</option>
+          <option value="descending">Descending</option>
+        </select>
+      </div>
     </div>
+    <ColumnWrapper numOfColumns="2">
+      <div v-for="article in filteredArticles">
+        <ArticleBox
+          v-if="filteredArticles"
+          :article="article"
+          :key="article.id"
+        />
+      </div>
+    </ColumnWrapper>
+  </div>
 </template>

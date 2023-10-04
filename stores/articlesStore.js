@@ -12,9 +12,6 @@ export const useArticlesStore = defineStore('articles', {
     actions: {
         addArticles (data) {
             this.articles = data
-        },
-        filter: (param) => {
-            return param
         }
     }
   })
