@@ -2,14 +2,19 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
-    pageTransition: { name: 'page', mode: 'out-in' }
+    pageTransition: { name: "page", mode: "out-in" },
   },
-  modules: ["@nuxtjs/tailwindcss", '@nuxtjs/google-fonts', ['@pinia/nuxt', {autoImports: ['defineStore, acceptHMRUpdate']}]],
+  modules: [
+    "@nuxtjs/tailwindcss",
+    "@nuxtjs/google-fonts",
+    ["@pinia/nuxt", { autoImports: ["defineStore, acceptHMRUpdate"] }],
+    "nuxt-icons"
+  ],
   imports: {
-    dirs: ['stores']
+    dirs: ["stores"],
   },
   tailwindcss: {
-    cssPath: '~/tailwind.css',
-    injectPosition: 'last',
-  }
-})
+    cssPath: "~/tailwind.css",
+    injectPosition: "last",
+  },
+});

@@ -23,8 +23,8 @@
       </ColumnWrapper>
 
       <ColumnWrapper numOfColumns="2">
-        <ArticleBox :article="{title: 'Delivering clarity on a global scale', category: 'BE LIGHTNING', imgUrl: '/_nuxt/assets/images/img-5.png'}"/>
-        <ArticleBox :article="{title: 'Swipe to find your next holiday destination', category: 'Tui', imgUrl: '/_nuxt/assets/images/img-5.png'}"/>
+        <ArticleBox :article="{title: 'Delivering clarity on a global scale', category: 'BE LIGHTNING', imgUrl: '/_nuxt/assets/images/img-13.png'}"/>
+        <ArticleBox :article="{title: 'Swipe to find your next holiday destination', category: 'Tui', imgUrl: '/_nuxt/assets/images/img-14.png'}"/>
       </ColumnWrapper>
 
       <ColumnWrapper numOfColumns="3">

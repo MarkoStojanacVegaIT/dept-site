@@ -49,7 +49,7 @@ const filteredArticles = computed(() => {
 </script>
 
 <template>
-  <div>
+  <section>
     <div class="bg-black py-[50px]">
       <div class="container mx-auto">
         <h1 class="text-white mb-[10px] uppercase">Filter by:</h1>
@@ -97,5 +97,5 @@ const filteredArticles = computed(() => {
         />
       </div>
     </ColumnWrapper>
-  </div>
+  </section>
 </template>

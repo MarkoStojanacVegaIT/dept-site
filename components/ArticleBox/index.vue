@@ -15,7 +15,7 @@ const printSpanRangeClass = () => {
 </script>
 
 <template>
-  <div
+  <section
     :style="`background-image: url('${imgUrl}')` "
     class="relative h-[70vh] bg-cover bg-center after:absolute after:w-full after:h-full after:inset-y-0 after:bg-black/40"
     :class="printSpanRangeClass()"
@@ -31,5 +31,5 @@ const printSpanRangeClass = () => {
         >
       </div>
     </div>
-  </div>
+  </section>
 </template>

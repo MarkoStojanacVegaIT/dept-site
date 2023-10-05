@@ -1,7 +1,7 @@
 export const JSON_SERVER_URL = "http://localhost:3004/data";
 export const SORT_ORDER = {
   ASC: "ascending",
-  DEST: "descending",
+  DESC: "descending",
 };
 export const ERROR_MESSAGES = {
   REQUIRED: "This field is required!",

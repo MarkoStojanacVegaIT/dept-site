@@ -1,10 +1,14 @@
 <script setup>
 import { ERROR_MESSAGES, EMAIL_REGEX } from "@/consts";
+import { toast } from "vue3-toastify";
+import "vue3-toastify/dist/index.css";
+
 const formData = ref({
   name: "",
   email: "",
   message: "",
 });
+
 const validationErrors = ref({
   name: {
     error: false,
@@ -51,14 +55,26 @@ const handleSubmitForm = async () => {
   const isValid = validateForm();
   if (isValid) {
     loading.value = true;
-    await usePostContact(formData.value);
-    loading.value = false;
+    try {
+      await usePostContact(formData.value);
+      toast.success("Contact added!", {
+        autoClose: 6000,
+        theme: "colored",
+      });
+      loading.value = false;
+    } catch (e) {
+      toast.error("Error while adding a contact!", {
+        autoClose: 6000,
+        theme: "colored",
+      });
+      loading.value = false;
+    }
   }
 };
 </script>
 
 <template>
-  <div class="flex p-[80px]">
+  <section class="flex p-[80px]">
     <h2 class="uppercase text-[48px] w-[25%] mr-[80px]">
       QUESTION? WE ARE HERE TO HELP!
     </h2>
@@ -116,5 +132,5 @@ const handleSubmitForm = async () => {
         {{ loading ? "Sending..." : "Send" }}
       </button>
     </form>
-  </div>
+  </section>
 </template>
