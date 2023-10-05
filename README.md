@@ -72,4 +72,20 @@ yarn preview
 bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Start JSON server:
+
+```bash
+json-server --watch db.json --port 3004
+```
+
+Run storybook locally:
+
+```bash
+npm run storybook
+```
+
+Run tests:
+
+```bash
+npm run test
+```
